@@ -12,14 +12,6 @@ function ItemCount({ initial, min, max, onAdd }) {
     setIni(current+1);
   }
 
-  function agregar(){
-    if(current === 1){
-        alert('Se agregó un producto');
-    } else {
-        alert('Se agregaron ' + current + ' productos');
-    }
-  }
-
   return <>
   <div style={{margin:50, display: 'flex'}}>
     <button onClick={restar} disabled={current<=min} className="buttonIconCart"> - </button>
@@ -27,7 +19,7 @@ function ItemCount({ initial, min, max, onAdd }) {
     <button onClick={sumar} disabled={current===max} className="buttonIconCart"> + </button>
   </div>
   <div>
-    <button onClick={agregar} style={{display: 'inline', fontFamily: 'Raleway', fontSize: 20}} className="buttonCartAdd">Agregar al carrito</button>
+    <button onClick={onAdd} style={{display: 'inline', fontFamily: 'Raleway', fontSize: 20}} className="buttonCartAdd">Agregar al carrito</button>
   </div>
   </>
 }
