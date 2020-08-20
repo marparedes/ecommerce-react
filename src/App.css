@@ -87,3 +87,11 @@
   justify-content: center;
   padding: 20px;
 }
+
+.itemHome{
+  color: black;
+  margin: 25px;
+  width: 250px;
+  font-family: Alata;
+  text-align: center;
+}

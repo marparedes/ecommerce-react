@@ -15,7 +15,6 @@ function ItemList() {
     useEffect(() => {
         task.then( result => {
             setProductos(result);
-            console.log(result);
         }, err => {
             console.log('Error: ' + err);
          }).catch( err => {
@@ -25,7 +24,7 @@ function ItemList() {
 
     return <div className="productsCont">
         
-        {productos.map(product => <Item key={product.id} nombre={product.name} desc={product.description} stock={product.stock}/>)}
+        {productos.map(product => <Item key={product.id} categ={product.categ} nombre={product.name} desc={product.description} precio={product.precio}/>)}
         
     </div>
 }

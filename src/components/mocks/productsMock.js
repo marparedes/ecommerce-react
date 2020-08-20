@@ -1,33 +1,43 @@
 const products = [
     {
         id:"1",
-        name:"Remera",
-        description:"Remera Negra",
-        stock: 15
+        categ:"Ropa",
+        name:"Remera Negra",
+        description: "",
+        stock: 15,
+        precio: 200
     },
     {
         id:"2",
-        name:"Remera",
-        description:"Camiseta Blanca",
-        stock: 7
+        categ:"Ropa",
+        name:"Camiseta Blanca",
+        description: "",
+        stock: 7,
+        precio: 500
     },
     {
         id:"3",
-        name:"Remera",
-        description:"Pantalón Gris",
-        stock: 5
+        categ:"Accesorio",
+        name:"Cartera Rosa",
+        description: "",
+        stock: 5,
+        precio: 1500
     },
     {
         id:"4",
-        name:"Remera",
-        description:"Remera Negra",
-        stock: 10
+        categ:"Accesorio",
+        name:"Collar",
+        description: "",
+        stock: 10,
+        precio: 400
     },
     {
         id:"5",
-        name:"Remera",
-        description:"Remera Negra",
-        stock: 15
+        categ:"Ropa",
+        name:"Remera Blanca",
+        description: "",
+        stock: 15,
+        precio: 450
     }
 ];
 
