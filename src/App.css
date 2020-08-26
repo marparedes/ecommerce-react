@@ -95,3 +95,17 @@
   font-family: Alata;
   text-align: center;
 }
+
+.detailTitle {
+  color: cadetblue;
+  font-size: 3rem;
+  margin: 40px 20px;
+  font-weight: 500;
+}
+
+.detailContainer {
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 80px;
+}

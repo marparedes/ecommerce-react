@@ -1,11 +1,11 @@
 const products = [
     {
         id:"1",
-        categ:"Ropa",
-        name:"Remera Negra",
-        description: "",
-        stock: 15,
-        precio: 200
+        categ:"Accesorio",
+        name:"Collar",
+        description: "Collar corto con una moneda y tassel en metal 'Lucky Charm' ",
+        stock: 10,
+        precio: 400
     },
     {
         id:"2",
@@ -25,11 +25,11 @@ const products = [
     },
     {
         id:"4",
-        categ:"Accesorio",
-        name:"Collar",
+        categ:"Ropa",
+        name:"Remera Negra",
         description: "",
-        stock: 10,
-        precio: 400
+        stock: 15,
+        precio: 200
     },
     {
         id:"5",

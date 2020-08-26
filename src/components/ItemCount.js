@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function ItemCount({ initial, min, max, onAdd }) {
-  // const current = initial;
 
   const [ current, setIni ] = useState(initial);
 
@@ -13,12 +12,12 @@ function ItemCount({ initial, min, max, onAdd }) {
   }
 
   return <>
-  <div style={{margin:50, display: 'flex'}}>
+  <div style={{margin:20, textAlign: "center"}}>
     <button onClick={restar} disabled={current<=min} className="buttonIconCart"> - </button>
-    <p style={{color: 'red', width: 30, textAlign: 'center'}}> {current} </p>
+    <p style={{color: 'red', width: 30, textAlign: 'center', display: 'inline'}}> {current} </p>
     <button onClick={sumar} disabled={current===max} className="buttonIconCart"> + </button>
   </div>
-  <div>
+  <div style={{textAlign: "center"}}>
     <button onClick={onAdd} style={{display: 'inline', fontFamily: 'Raleway', fontSize: 20}} className="buttonCartAdd">Agregar al carrito</button>
   </div>
   </>

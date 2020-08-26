@@ -6,9 +6,9 @@ import Home from './containers/Home';
 function App() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+
+      <Navbar />
+
 
       <Home greeting="Bienvenid@" />
 
