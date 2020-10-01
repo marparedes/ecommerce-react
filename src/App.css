@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+* {
+  background-color: #E6E6E6;
+}
 
 .App-logo {
   height: 40vmin;
@@ -40,7 +43,11 @@
 .linksMenu:hover{
   color: rgb(10 243 200 / 88%)!important;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 18;
+}
+
+.menu {
+  margin: 10px
 }
 
 .menu ul{
@@ -59,7 +66,7 @@
   background: #fa503f;
   color: white;
   height: 48px!important;
-  width: 80px;
+  width: 65px;
   border-radius: 20px;
 }
 
@@ -68,11 +75,14 @@
 }
 
 .buttonCartAdd{
+  display: inline;
+  font-family: "Raleway";
+  font-size: 20px;
   outline: none!important;
   border: none;
   background: #fa503f;
   color: white;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 20px;
 }
 .buttonCartAdd:hover{
@@ -108,4 +118,35 @@
   grid-row-gap: 50px;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 80px;
+}
+
+.itemHomeImg:hover {
+  border-color: #949494;
+  border: solid;
+  text-decoration: none;
+}
+.itemHomeImg {
+  border: hidden;
+  box-shadow: 0 0 15px #a7a7a7;
+  margin: 20px;
+}
+
+.itemDetailImg {
+  border: hidden;
+  box-shadow: 0 0 10px #a7a7a7;
+  margin: 20px;
+}
+
+.alignText {
+  text-align: center
+}
+
+.listCart{
+  font-family: "Raleway";
+  font-size: 18px;
+
+}
+
+.backgroundNavbar{
+  background-color: #61a69b!important;
 }

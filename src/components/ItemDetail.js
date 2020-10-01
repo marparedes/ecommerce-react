@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from './ItemCount';
-import imagen from '../assets/collar.jpg';
+import { Link } from 'react-router-dom';
+import { useCartContext } from './CartContext';
+
+function ButtonDetail({cant , item}){
+    const { addItem } = useCartContext();
+    return <button className="buttonCartAdd" onClick={()=>addItem({...item, quantity: cant})}>Comprar {cant} </button>
+}
 
 function ItemDetail({item}) {
 
-    function addCount(){
-        console.log('Se agregaron los productos al carrito');
-    }
+    const [ cant, setCant ] = useState();
+
 
     const marginDesc = {
         margin: "50px 20px"
@@ -19,18 +24,32 @@ function ItemDetail({item}) {
     }
 
     return <div  style={{color: 'black', fontFamily: "Raleway"}}>
-        <p style={title}>{item.name} </p>
+        <p style={title}>{item.title} </p>
         <div className="detailContainer">
-            <div style={{textAlign: "center"}}>
-                <img src={imagen} alt=""></img>
+            <div className="alignText">
+                <img src={`/${item.imageId}`} alt="" className="itemDetailImg"></img>
             </div>
 
         
             <div>
                 <p style={marginDesc}> Descripción: {item.description} </p>
-                <p style={marginDesc}> Precio: ${item.precio} </p>
-                <ItemCount initial={1} min={1} max={item.stock} onAdd={addCount} />
+                <p style={{...marginDesc, fontSize: 20}}> Precio: ${item.price} </p>
+                <div>
+                    <ItemCount initial={1} min={1} max={item.stock} onChange={value => setCant(value)}/>
+                    <div className="alignText">
+                        
+                            <ButtonDetail cant={cant} item={item}/>
+                      
+                    </div>
+                    
+                </div>
             </div>
+            
+        </div>
+        <div style={{textAlign: "center", margin: 30}}>
+            <Link to={'/'}>
+                <button className="btn btn-info"> Volver a Inicio</button>
+            </Link>
         </div>
         
     </div>
