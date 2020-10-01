@@ -5,10 +5,18 @@ import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import { getFirestore } from '../firebase';
 import { useCartContext } from './CartContext';
+import NoItemMessage from './NoItemMessage';
 
 export function OrderConfirmation({ orderId }) {
     return <div>
-        <p> Feedback del orderId: {orderId} </p>
+        <div className="alert alert-success" style={{fontSize: 20, textAlign:"center", fontFamily: "Raleway"}} role="alert">
+            Tu ID de compra es: {orderId}
+        </div>
+        <div style={{textAlign:"center"}}>
+            <Link to={'/'}>
+                <button className="btn btn-info">Volver a comprar</button>
+            </Link>
+        </div>
     </div>
 }
 
@@ -67,7 +75,6 @@ export default function CartForm() {
         }
     }
 
-    // probar hacer un useEffect (return ) para cuando salga del componente se borre el orderId
     useEffect(() => {
         console.log('mounted');
         console.log(success)
@@ -78,35 +85,37 @@ export default function CartForm() {
     return <div className="container" style={{marginTop: "10%"}}>
         {!success && !orderId ? <>
             {!orderId && list.length? <> 
-                <Form>
+                <Form data-toggle="validator">
                     <Form.Row>
                         
                         <Form.Group controlId="">
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control placeholder="Nombre" value={name} onInput={onNameChange}/>
+                            
+                            <Form.Group controlId="">
+                                <Form.Label>Nombre</Form.Label>
+                                <Form.Control placeholder="Nombre" value={name} onInput={onNameChange}/>
+                            </Form.Group>
+
+                            <Form.Label>Telefono</Form.Label>
+                            <Form.Control type="number" placeholder="Telefono" value={phone} onInput={onPhoneChange}/>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email" id="inputEmail" required/>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Confirmar Email</Form.Label>
-                            <Form.Control type="email" placeholder="Repetir Email" value={email} onInput={onEmailChange}/>
+                            <Form.Control type="email" placeholder="Repetir Email" data-match="#inputEmail" data-match-error="El email no es correcto" value={email} onInput={onEmailChange} required/>
                         </Form.Group>
                     </Form.Row>
 
 
-                    <Form.Group controlId="">
-                        <Form.Label>Telefono</Form.Label>
-                        <Form.Control placeholder="Telefono" value={phone} onInput={onPhoneChange}/>
-                    </Form.Group>
 
                 </Form>
                 <button type="submit" className="btn btn-info" disabled={!name || !email || !phone} onClick={() => createOrder()}> Realizar Compra</button>
 
-            </> : <p>  No hay productos para hacer Checkout </p>}
+            </> : <NoItemMessage message="checkout"/>}
         </>
          : <OrderConfirmation orderId={orderId} /> }
     </div>

@@ -3,17 +3,7 @@ import { useCartContext } from './CartContext';
 import deleteIcon from '../assets/deleteIcon.svg';
 import {Link} from 'react-router-dom';
 import 'firebase/firestore';
-
-function NoItem() {
-    return <div>
-        <div style={{textAlign: "center", margin: 50, fontSize:25, fontFamily: "Alata"}}> No hay productos en el carrito </div>
-        <div style={{textAlign:"center"}}>
-            <Link to={'/'}>
-                <button type="button" className="btn btn-info">Ir a comprar</button>    
-            </Link>
-        </div>
-    </div>
-}
+import NoItemMessage from './NoItemMessage';
 
 
 function Cart() {
@@ -90,7 +80,7 @@ function Cart() {
             </div>
         </div>
     </div>
-    </> : <NoItem />}
+    </> : <NoItemMessage message="carrito"/>}
   </div>
 
 }
