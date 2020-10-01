@@ -4,7 +4,7 @@ import React from 'react';
 export default function Footer() {
     return <footer>
     <div className="container">
-      <div className="row">
+      <div className="row box">
         <div className="col-12 col-md-6 centrado">
           <div className="">
             <div className="divLogo">
@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
         <div className="col-12 col-md-6 box">
           <h2 className="box">Contáctenos</h2>
-          <ul type="none" >
+          <ul type="none" className="box">
             <li >
               CABA
             </li>

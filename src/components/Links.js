@@ -30,9 +30,9 @@ const Links = () => {
                     <Link className="dropdown-item" to={'/'}>Todos</Link>
                 </div>
             </li>
-            <li className="nav-item backgroundNavbar" style={menuPrincipal}>
+            {/* <li className="nav-item backgroundNavbar" style={menuPrincipal}>
                 <Link className="nav-link linksMenu" to={'/'}>FAQ</Link>
-            </li>
+            </li> */}
             <li className="nav-item backgroundNavbar" style={menuPrincipal}>
                 <Link className="nav-link linksMenu" to={'/'}>CONTACTO</Link>
             </li>
