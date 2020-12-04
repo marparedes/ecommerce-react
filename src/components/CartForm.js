@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -8,7 +8,7 @@ import { useCartContext } from './CartContext';
 import NoItemMessage from './NoItemMessage';
 
 export function OrderConfirmation({ orderId }) {
-    return <div>
+    return <div style={{margin:"20% 30px"}}>
         <div className="alert alert-success" style={{fontSize: 20, textAlign:"center", fontFamily: "Raleway"}} role="alert">
             Tu ID de compra es: {orderId}
         </div>
@@ -77,12 +77,10 @@ export default function CartForm() {
 
     useEffect(() => {
         console.log('mounted');
-        console.log(success)
-        return console.log('dismounted ' + success);
     }, [list])
 
 
-    return <div className="container" style={{marginTop: "10%"}}>
+    return <div className="container" style={{marginTop: "10%", marginBottom:"10%"}}>
         {!success && !orderId ? <>
             {!orderId && list.length? <> 
                 <Form data-toggle="validator">

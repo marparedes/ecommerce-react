@@ -3,11 +3,6 @@ import ItemDetail from '../components/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from '../firebase';
 
-// const getItem = (id) => {
-//     const item = products.find(i => i.id === id);
-//     console.log(item);
-//     return item;
-// }
 
 function ItemDetailContainer() {
 
@@ -41,8 +36,7 @@ function ItemDetailContainer() {
 
     return <div style={{margin: "50px 0"}}>
         
-        {/* modificar ESTILOS del loading */}
-        {loading ? <p style={{color: 'black', fontSize: 50, fontFamily:"Alata", textAlign:"center", marginTop: '30vh'}}> {loading} </p> : <ItemDetail item={item} /> }
+        {loading ? <p style={{color: 'black', fontSize: 50, fontFamily:"Alata", textAlign:"center", margin: '30vh'}}> {loading} </p> : <ItemDetail item={item} /> }
     </div>
 }
 
