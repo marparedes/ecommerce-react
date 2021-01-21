@@ -48,10 +48,10 @@ function Cart() {
                             <thead>
                                 <tr style={sizeProds}>
                                     
-                                    <th style={{width:"50%", ...center}}><img src={`/${item.imageId}`} style={{width: "20%"}}/> {item.title}</th>
+                                    <th style={{width:"50%", ...center}}><img src={`/${item.imageId}`} style={{width: "20%"}} alt="cartProdImg"/> {item.title}</th>
                                     <th style={{width:"12%", ...center}}> ${item.price} </th>
                                     <th style={{width:"10%", textAlign: "center", ...center}}> {item.quantity} </th>
-                                    <th style={{width:"16%", textAlign: "center", ...center}}><img src={deleteIcon} style={{cursor:'pointer', width: 20}} onClick={()=> deleteItem(item)}/></th>
+                                    <th style={{width:"16%", textAlign: "center", ...center}}><img src={deleteIcon} style={{cursor:'pointer', width: 20}} alt="deleteImg" onClick={()=> deleteItem(item)}/></th>
                             
                                 </tr>
                             </thead>
@@ -62,7 +62,6 @@ function Cart() {
 
                 <div className="float-right text-right">
                     <h4>Subtotal: ${getTotal()} </h4>
-                    <h1></h1>
                 </div>
             </div>
         </div>
@@ -70,7 +69,7 @@ function Cart() {
         <div className="row mt-4 d-flex align-items-center">
             <div className="col-sm-6 order-md-2 text-right">
                 <Link to={'/checkout'}>
-                    <a className="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
+                    <a className="btn btn-primary mb-4 btn-lg pl-5 pr-5" href="">Checkout</a>
                 </Link>
             </div>
             <div className="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">

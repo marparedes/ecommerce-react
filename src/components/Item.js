@@ -10,15 +10,13 @@ function Item({ id, categ, nombre, imagen, precio }) {
         <div>
             <Link to={`/item/${id}`} >
                 <div className="itemHomeImg">
-                    <img src={`/${imagen}`} style={{width:'100%'}} ></img>
+                    <img src={`/${imagen}`} style={{width:'100%'}} alt="productImg"></img>
                 </div>
             </Link>
             <p> {nombre} </p>
             {/* <p> {desc} </p> */}
             <span style={{fontFamily: "Raleway", fontSize: 15}}>ARS ${precio}</span> 
         </div>
-       
-      
     </div>
 }
 

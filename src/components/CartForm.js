@@ -67,10 +67,7 @@ export default function CartForm() {
             setOrderId(id);
             setSuccess(true);
             vaciarLista();
-            console.log('id:', id);
-            console.log(success)
         } catch (error) {
-            // feedback para el usuario
             console.log('error')
         }
     }

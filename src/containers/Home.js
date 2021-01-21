@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import ItemCount from '../components/ItemCount';
 import ItemList from '../components/ItemList';
 import { getFirestore } from '../firebase';
 import { useParams } from 'react-router-dom';

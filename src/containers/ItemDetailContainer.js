@@ -3,7 +3,6 @@ import ItemDetail from '../components/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from '../firebase';
 
-
 function ItemDetailContainer() {
 
     const { id } = useParams();
@@ -30,9 +29,6 @@ function ItemDetailContainer() {
         });
         
     }, [id]);
-    
-
-   
 
     return <div style={{margin: "50px 0"}}>
         
